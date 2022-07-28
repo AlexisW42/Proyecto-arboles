@@ -53,17 +53,27 @@ void ABB::insertarNodo(ArbolNodo *nodoNuevo)
     }
 }
 
-void ABB::imprimir2D(ArbolNodo *r, int espacio)
+void ABB::imprimirArbol(ArbolNodo *r, int espacio)
 {
     if(r==NULL)
         return;
     espacio+=ESPACIO;
-    imprimir2D(r->derecho, espacio);
+    imprimirArbol(r->derecho, espacio);
     cout<<endl;
     for (int i= ESPACIO; i < espacio; i++)
     {
         cout <<" ";
     }
     cout<<r->valor<<"\n";
-    imprimir2D(r->izquierdo, espacio);
+    imprimirArbol(r->izquierdo, espacio);
+}
+
+void ABB::imprimirPostOrden(ArbolNodo* r)
+{
+    if(r==NULL)
+    return;
+
+    imprimirPostOrden(r->izquierdo);
+    imprimirPostOrden(r->derecho);
+    cout <<r->valor<<" ";
 }

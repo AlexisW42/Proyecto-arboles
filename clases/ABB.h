@@ -10,7 +10,8 @@ public:
     ABB();
     bool esVacio();
     void insertarNodo(ArbolNodo *nodoNuevo);
-    void imprimir2D(ArbolNodo *r, int espacio);
+    void imprimirArbol(ArbolNodo *r, int espacio);
+    void imprimirPostOrden(ArbolNodo* r);
 };
 
 #endif
