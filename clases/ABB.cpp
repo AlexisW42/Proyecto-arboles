@@ -77,3 +77,14 @@ void ABB::imprimirPostOrden(ArbolNodo* r)
     imprimirPostOrden(r->derecho);
     cout <<r->valor<<" ";
 }
+
+void ABB::imprimirHojas(ArbolNodo* r)
+{
+    if(r==NULL)
+    return;
+
+    imprimirHojas(r->izquierdo);
+    imprimirHojas(r->derecho);
+    if(r->izquierdo==NULL&&r->derecho==NULL)
+    cout <<r->valor<<" ";
+}

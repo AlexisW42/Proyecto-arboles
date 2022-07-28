@@ -12,6 +12,7 @@ public:
     void insertarNodo(ArbolNodo *nodoNuevo);
     void imprimirArbol(ArbolNodo *r, int espacio);
     void imprimirPostOrden(ArbolNodo* r);
+    void imprimirHojas(ArbolNodo* r);
 };
 
 #endif

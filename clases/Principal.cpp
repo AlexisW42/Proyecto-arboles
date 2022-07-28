@@ -38,8 +38,11 @@ void Principal::imprimirVector()
         cout<<setw(36)<<" "<<"Arbol N°"<<setw(3)<<i+1<<setw(36)<<" ";
         vArboles.at(i).imprimirArbol(vArboles.at(i).raiz, 5);
         cout<<endl;
-        cout<<"PostOrden: ";
+        cout<<"PostOrden del "<<"Arbol N°"<<setw(3)<<i+1<<": ";
         vArboles.at(i).imprimirPostOrden(vArboles.at(i).raiz);
+        cout<<endl;
+        cout<<"Hojas del "<<"Arbol N°"<<setw(3)<<i+1<<": ";
+        vArboles.at(i).imprimirHojas(vArboles.at(i).raiz);
         cout<<endl;
         cout<<endl;
     }
