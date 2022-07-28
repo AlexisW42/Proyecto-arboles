@@ -13,6 +13,7 @@ public:
     void imprimirArbol(ArbolNodo *r, int espacio);
     void imprimirPostOrden(ArbolNodo* r);
     void imprimirHojas(ArbolNodo* r);
+    int getAltura(ArbolNodo* r);
 };
 
 #endif

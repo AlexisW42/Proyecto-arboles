@@ -88,3 +88,19 @@ void ABB::imprimirHojas(ArbolNodo* r)
     if(r->izquierdo==NULL&&r->derecho==NULL)
     cout <<r->valor<<" ";
 }
+
+int ABB::getAltura(ArbolNodo* r)
+{
+    if (r==NULL)
+        return 0;
+    else
+    {
+        int alturaIzquierda = getAltura(r->izquierdo);
+        int alturaDerecha = getAltura(r->derecho);
+
+        if (alturaIzquierda > alturaDerecha)
+            return (alturaIzquierda+1);
+        else
+            return (alturaDerecha+1);
+    }
+}
