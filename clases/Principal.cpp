@@ -41,12 +41,16 @@ void Principal::imprimirVector()
         cout<<"PostOrden del "<<"Arbol #"<<setw(2)<<i+1<<": ";
         vArboles.at(i).imprimirPostOrden(vArboles.at(i).raiz);
         cout<<endl;
-        cout<<"Hojas del "<<"Arbol #"<<setw(2)<<i+1<<": ";
+        cout<<"Numero y Hojas del "<<"Arbol #"<<setw(2)<<i+1<<": ";
         vArboles.at(i).imprimirHojas(vArboles.at(i).raiz);
         cout<<endl;
         cout<<"Altura del "<<"Arbol #"<<setw(2)<<i+1<<": "
         <<vArboles.at(i).getAltura(vArboles.at(i).raiz);
         cout<<endl;
+        if (vArboles.at(i).getEsBalanceado(vArboles.at(i).raiz))
+            cout<<"El arbol esta equilibrado"<< endl;
+        else
+            cout<<"El arbol no esta equilibrado"<< endl;
     }
     cout<<"+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"<<endl;
 }

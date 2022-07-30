@@ -86,7 +86,7 @@ void ABB::imprimirHojas(ArbolNodo* r)
     imprimirHojas(r->izquierdo);
     imprimirHojas(r->derecho);
     if(r->izquierdo==NULL&&r->derecho==NULL)
-    cout <<r->valor<<" ";
+        cout <<r->valor<<" ";   
 }
 
 int ABB::getAltura(ArbolNodo* r)
@@ -103,4 +103,33 @@ int ABB::getAltura(ArbolNodo* r)
         else
             return (alturaDerecha+1);
     }
+}
+
+int ABB::getMenorAltura(ArbolNodo* r)
+{
+    if (r==NULL)
+        return 0;
+    else
+    {
+        int alturaIzquierda = getAltura(r->izquierdo);
+        int alturaDerecha = getAltura(r->derecho);
+
+        if (alturaIzquierda < alturaDerecha)
+            return (alturaIzquierda+1);
+        else
+            return (alturaDerecha+1);
+    }
+}
+
+bool ABB::getEsBalanceado(ArbolNodo* r)
+{
+    int mayorAltura = getAltura(r);
+    int menorAltura = getMenorAltura(r);
+
+    int diferencia = mayorAltura-menorAltura;
+
+    if (diferencia >= -1 && diferencia <= 1)
+        return true;
+    
+    return false;
 }
