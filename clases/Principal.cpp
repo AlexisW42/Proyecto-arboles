@@ -41,8 +41,11 @@ void Principal::imprimirVector()
         cout<<"PostOrden del "<<"Arbol #"<<setw(2)<<i+1<<": ";
         vArboles.at(i).imprimirPostOrden(vArboles.at(i).raiz);
         cout<<endl;
-        cout<<"Numero y Hojas del "<<"Arbol #"<<setw(2)<<i+1<<": ";
-        vArboles.at(i).imprimirHojas(vArboles.at(i).raiz);
+        cout<<"Numero de Hojas del Arbol #";
+        if (i<=99) cout<<i+1<< ", ";
+        else cout << setw(2)<< i+1<< ", ";
+        cout<< vArboles.at(i).getNumeroHojas(vArboles.at(i).raiz)<< " hojas, ";
+           vArboles.at(i).imprimirHojas(vArboles.at(i).raiz);
         cout<<endl;
         cout<<"Altura del "<<"Arbol #"<<setw(2)<<i+1<<": "
         <<vArboles.at(i).getAltura(vArboles.at(i).raiz);
